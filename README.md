@@ -32,4 +32,4 @@ browser code and is has tests all over it. The code quality is good, and it will
 
 ## License
 
-This software is open source, [licensed at The MIT License (MIT)]https://github.com/leocosta/xdojo/blob/master/LICENSE). Check out the terms of the license before you contribute, fork, copy or do anything with the code. If you decide to contribute you agree to grant copyright of all your contribution to this project, and agree to mention clearly if do not agree to these terms. Your work will be licensed with the project at GPL V2, along the rest of the code.
+This software is open source, [licensed at The MIT License (MIT)](https://github.com/leocosta/xdojo/blob/master/LICENSE). Check out the terms of the license before you contribute, fork, copy or do anything with the code. If you decide to contribute you agree to grant copyright of all your contribution to this project, and agree to mention clearly if do not agree to these terms. Your work will be licensed with the project at GPL V2, along the rest of the code.
