@@ -18,5 +18,6 @@ bundle/vim-peepopen
 *.arj
 *.[t]gz
 *.[t]bz2
+*.sh
 tmp/
 log/

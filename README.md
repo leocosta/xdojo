@@ -1,9 +1,9 @@
 # XDojo
 
-This is the repository for the XDojo website ([www.xdojo.co](http://www.xdojo.com.br)). 
+This is the repository for the XDojo website ([www.xdojo.com.br](http://www.xdojo.com.br)). 
 
 [![Build Status](https://travis-ci.org/leocosta/xdojo.png)](https://travis-ci.org/leocosta/xdojo)
-[![Coverage Status](https://coveralls.io/repos/leocosta/atelies/xdojo.png)](https://coveralls.io/r/leocosta/xdojo)
+[![Coverage Status](https://coveralls.io/repos/leocosta/xdojo/badge.png)](https://coveralls.io/r/leocosta/xdojo)
 [![Dependencies](https://gemnasium.com/leocosta/xdojo.png)](https://gemnasium.com/leocosta/xdojo)
 
 [![Codeship](https://www.codeship.io/projects/5399b800-b067-0131-a262-6660aa17add9/status)](https://www.codeship.io/projects/5399b800-b067-0131-a262-6660aa17add9/status)
