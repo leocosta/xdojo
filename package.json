@@ -1,0 +1,12 @@
+{
+  "name": "XDojo",
+  "version": "0.1.0",
+  "description": "This is the repository for the XDojo.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/leocosta/xdojo.git"
+  },
+  "devDependencies": {
+  	"grunt": "~0.4.1"
+  }
+}
