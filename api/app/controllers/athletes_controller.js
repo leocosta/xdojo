@@ -1,3 +1,5 @@
+'use strict';
+
 var _       = require('lodash');
 //var helpers = require('./_helpers');
 var orm     = require('orm');
@@ -5,7 +7,9 @@ var orm     = require('orm');
 module.exports = {
   list: function (req, res, next) {
     req.models.athlete.find().limit(4).order('-id').all(function (err, athletes) {
-      if (err) return next(err);
+      if (err) {
+        return next(err);
+      }
 
       var items = athletes.map(function (m) {
         return m.serialize();
@@ -18,13 +22,12 @@ module.exports = {
     var params = _.pick(req.body, 'name', 'body');
 
     req.models.athlete.create(params, function (err, athlete) {
-      if(err) {
-        if(Array.isArray(err)) {
+      if (err) {
+        if (Array.isArray(err)) {
           //helpers.formatErrors(err) 
           return res.send(200, { errors: "error"});
-        } else {
-          return next(err);
         }
+        return next(err);
       }
 
       return res.send(200, athlete.serialize());

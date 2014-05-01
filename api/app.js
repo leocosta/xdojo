@@ -1,16 +1,13 @@
+'use strict';
 
-/**
- * Module dependencies.
- */
-
-var path        = require('path')
-  , express     = require('express')
-  , colors      = require('colors')
-  , settings    = require('./config/settings')
-  , environment = require('./config/environment')
-  , routes      = require('./config/routes')
-  , models      = require('./app/models/')
-  , http        = require('http');
+var path        = require('path');
+var express     = require('express');
+var colors      = require('colors');
+var settings    = require('./config/settings');
+var environment = require('./config/environment');
+var routes      = require('./config/routes');
+var models      = require('./app/models/');
+var http        = require('http');
 
 
 module.exports.start = function (done) {
@@ -19,8 +16,8 @@ module.exports.start = function (done) {
   environment(app);
   routes(app);
 
-  http.createServer(app).listen(settings.port, function () {
-    console.log( ("Listening on port " + settings.port).green );
+  http.createServer(app).listen(settings.port, function (server) {
+    console.log(("Listening on port " + settings.port).green);
 
     if (done) {
       return done(null, app, server);
@@ -34,9 +31,9 @@ module.exports.start = function (done) {
     }
   });
 
-}
+};
 
-// If someone ran: "node server.js" then automatically start the server
-if (path.basename(process.argv[1],'.js') == path.basename(__filename,'.js')) {
-  module.exports.start()
+// If someone ran: "node app.js" then automatically start the server
+if (path.basename(process.argv[1], '.js') == path.basename(__filename, '.js')) {
+  module.exports.start();
 }

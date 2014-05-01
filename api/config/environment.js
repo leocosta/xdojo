@@ -1,3 +1,7 @@
+/*jslint unparam: true*/
+
+'use strict';
+
 var path     = require('path');
 var express  = require('express');
 var settings = require('./settings');
@@ -11,7 +15,9 @@ module.exports = function (app) {
     app.use(express.methodOverride());
     app.use(function (req, res, next) {
       models(function (err, db) {
-        if (err) return next(err);
+        if (err) {
+          return next(err);
+        }
 
         req.models = db.models;
         req.db     = db;
@@ -20,7 +26,7 @@ module.exports = function (app) {
 
         return next();
       });
-    }),
+    });
     app.use(app.router);
   });
 };

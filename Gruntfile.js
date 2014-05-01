@@ -10,7 +10,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     hub: {
       all: {
-        src: ['./api/Gruntfile.js'],
+        src: ['./api/Gruntfile.js','./client/Gruntfile.js'],
         tasks: ['default'],
       },
     },

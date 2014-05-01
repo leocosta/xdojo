@@ -7,6 +7,10 @@ module.exports = function (grunt) {
   require('time-grunt')(grunt);
   // load all grunt tasks
   require('load-grunt-tasks')(grunt);
+  
+  //require('grunt-jslint')(grunt);
+
+  grunt.loadNpmTasks('grunt-jslint');
 
   var reloadPort = 35729, files;
 
@@ -17,6 +21,35 @@ module.exports = function (grunt) {
         file: 'app.js'
       }
     },
+    jslint: {
+      server: {
+        src: [
+          'app.js',
+          'config/*.js',
+          'routes/*.js',
+          'app/**/*.js'
+        ],
+        exclude: [
+          'test/**/*.js'
+        ],
+        directives: {
+          node: true,
+          passfail: true,
+          bitwise: true,
+          debug: true,
+          eqeq: true,
+          nomen: true,
+          plusplus: true,
+          todo: true,
+          vars: false,
+          unparam: false,
+          indent: 2
+        },
+        options: {
+          junit: 'out/server-junit.xml'
+        }
+      }
+    },    
     watch: {
       options: {
         nospawn: true,
@@ -69,5 +102,9 @@ module.exports = function (grunt) {
     }, 500);
   });
 
-  grunt.registerTask('default', ['develop', 'watch']);
+  grunt.registerTask('test', ['develop', 'jslint']);
+  grunt.registerTask('server', ['test', 'watch']);
+  grunt.registerTask('build', ['test']);
+
+  grunt.registerTask('default', ['build']);
 };
