@@ -4,3 +4,9 @@ node_js:
 before_install:
 - echo "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 - echo "Travis build id is $TRAVIS_BUILD_ID"
+before_script:
+- node_modules/bower/bin/bower install
+- ls -la
+script:
+- node_modules/grunt-cli/bin/grunt
+- ls -la
