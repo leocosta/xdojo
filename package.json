@@ -15,6 +15,9 @@
       "url": "https://github.com/leocosta/xdojo/blob/master/LICENSE"
     }
   ],
+  "scripts": {
+        "test": "grunt"
+  },  
   "engines": {
     "node": ">= 0.10.0"
   },  
