@@ -2,5 +2,9 @@ language: node_js
 node_js:
   - '0.10'
 before_install: npm install -g grunt-cli
-install: npm install && npm install api && npm install client
-before_script: grunt
+install:
+- npm install
+- cd api && npm install && cd ..
+- cd client && npm install && bower install && cd ..
+before_script: 
+- grunt

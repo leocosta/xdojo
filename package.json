@@ -16,13 +16,15 @@
     }
   ],
   "scripts": {
-        "test": "grunt"
+      "test": "grunt"
   },  
   "engines": {
     "node": ">= 0.10.0"
   },  
   "devDependencies": {
   	"grunt": "~0.4.1",
-    "grunt-hub": "~0.6.2"
+    "grunt-hub": "~0.6.2",
+    "load-grunt-tasks": "~0.4.0",
+    "time-grunt": "~0.3.1"
   }
 }
