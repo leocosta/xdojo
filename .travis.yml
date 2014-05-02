@@ -7,8 +7,6 @@ before_install:
 install:
 - npm install
 - cd api && npm install && cd ..
-- cd client && npm install
-- bower install 
-- cd ..
+- cd client && npm install && bower install && cd ..
 before_script: 
 - grunt
