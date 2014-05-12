@@ -26,11 +26,12 @@ module.exports = function (grunt) {
       server: {
         src: [
           'app.js',
-          'app/**/*.js',
-          'test/**/*.js'
+          'config/*.js',
+          'routes/*.js',
+          'app/**/*.js'
         ],
         exclude: [
-          //'test/**/*.js'
+          'test/**/*.js'
         ],
         directives: {
           node: true,
@@ -43,19 +44,7 @@ module.exports = function (grunt) {
           todo: true,
           vars: false,
           unparam: false,
-          expr: true,
-          indent: 2,
-          globals: {
-            supertest: true,
-            expect: true,
-            assert: true,
-            Sequelize: true,
-            orm: true,
-            describe: true,
-            before: true,
-            it: true,
-            request: true
-          }
+          indent: 2
         },
         options: {
           junit: 'out/server-junit.xml'
@@ -152,7 +141,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-coveralls');
 
-  grunt.registerTask('test', [/*'develop', */'mochaTest', 'coveralls']);
+  grunt.registerTask('test', ['develop', 'mochaTest', 'coveralls']);
   grunt.registerTask('server', ['test', 'watch']);
   grunt.registerTask('build', ['jslint', 'test']);
 

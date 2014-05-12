@@ -12,15 +12,13 @@ This is the repository for the XDojo website ([www.xdojo.com.br](http://www.xdoj
 
 Welcome to XDojo!
 
-Directors can use the XDojo tournament software to simplify the process of running a tournament which will help save hours of time. This is a complete tournament web application that has been used to run several world championships, national, state / provincial, and local events. Works for any type of tournament! 
+Directors can use the XDojo tournament software to simplify the process of running a tournament which will help save hours of time. This is a complete tournament web application that will help you manage several jiu-jitsu championships.
 
 Participants are able to register online and after the registration deadline, the director seeds brackets and sets match times. Tournament staff can manage a live event and update game scores. Results will appear in real time on the tournament website where fans, parents, and players can follow along. 
 
-It is made using the most recent technologies, and it is hostable in most cloud providers, AWS or Heroku. We are using Heroku
-right now because they better support NodeJS than any other cloud provider.
+It is made using the most recent technologies, and it is hostable in most cloud providers, AWS or Heroku. We are using Heroku right now because they better support NodeJS than any other cloud provider.
 
-This website is a good start if you want to build a modern Node app using a Single Page App approach. It uses AngularJS for the
-browser code and is has tests all over it. The code quality is good, and it will constantly evolve.
+This website is a good start if you want to build a modern Node app using a Single Page App approach. It uses AngularJS for the browser code and is has tests all over it. The code quality is good, and it will constantly evolve.
 
 ## Issues, task board and ideas
 

@@ -1,6 +1,8 @@
 tags
 backup
 docs
+out
+misc
 node_modules
 *~
 *.sw*

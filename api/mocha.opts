@@ -1,0 +1,4 @@
+--require test/support/_specHelper.js
+--timeout 30000
+--reporter spec
+--recursive

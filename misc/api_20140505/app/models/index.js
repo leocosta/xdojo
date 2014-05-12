@@ -5,18 +5,18 @@
 var fs        = require("fs");
 var path      = require("path");
 var Sequelize = require("sequelize");
-var settings  = require("../config/settings");
+var config    = require("../../config/config.json");
 
 module.exports = {
   initialize: function (app) {
 
     var models = this,
-      dbSettings = settings.database[app.get("env")],
+      sequelizeConf = config[app.get("env")],
       sequelize = new Sequelize(
-        dbSettings.database,
-        dbSettings.username,
-        dbSettings.password,
-        dbSettings.options
+        sequelizeConf.database,
+        sequelizeConf.username,
+        sequelizeConf.password,
+        sequelizeConf.options
       );
 
     fs
