@@ -9,4 +9,5 @@ install:
 - cd api && npm install && cd ..
 - cd client && npm install && bower install && cd ..
 before_script: 
+- mysql -e 'create database xdojoapp_test;'
 - grunt
