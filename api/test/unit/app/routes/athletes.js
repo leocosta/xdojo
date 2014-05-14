@@ -24,7 +24,6 @@ describe('Athletes Routes', function () {
   });
 
   describe('GET /athletes', function () {
-
     describe('when requesting resource /athletes', function () {
       it('should return an array of athletes', function (done) {
         supertest(app)
@@ -42,7 +41,6 @@ describe('Athletes Routes', function () {
           });
       });
     });
-
   });
 
   describe('GET /athletes/:id', function () {
@@ -71,6 +69,45 @@ describe('Athletes Routes', function () {
           .get('/athletes/12345678')
           .expect('Content-Type', /json/)
           .expect(404, done);
+      });
+    });
+  });
+
+  describe('POST /athletes', function () {
+    describe('when creating a new resource /athletes', function () {
+      it('should respond with 201', function (done) {
+        var newAthlete = {
+          name: 'New Athlete',
+          email: 'newathlete@email.com'
+        };
+        request(app)
+          .post('/athletes')
+          .send(newAthlete)
+          .expect('Content-Type', /json/)
+          .expect(201)
+          .end(function (err, res) {
+            if (err) {
+              return done(err);
+            }
+            var result = JSON.parse(res.text);
+            assert.equal(newAthlete.name, result.name);
+            assert.equal(newAthlete.email, result.email);
+            done();
+          });
+      });
+    });
+
+    describe('when creating an invalid athlete', function () {
+      it('should respond with 409', function (done) {
+        var invalidAthlete = {
+          name: 'Athlete Name',
+          email: 'invalid'
+        };
+        request(app)
+          .post('/athletes')
+          .send(invalidAthlete)
+          .expect('Content-Type', /json/)
+          .expect(409, done);
       });
     });
   });

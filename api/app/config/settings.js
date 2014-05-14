@@ -21,7 +21,8 @@ var settings = {
       password: null,
       options: {
         host: "localhost",
-        dialect: "mysql"
+        dialect: "mysql",
+        logging: false
       }
     },
     production: {

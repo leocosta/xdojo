@@ -9,7 +9,7 @@ module.exports = function (app) {
     models.Athlete.findAll()
       .complete(function (err, athletes) {
         if (err) {
-          return res.send(404, 'Not Found');
+          return res.send(500, 'Internal Server Error');
         }
         res.json(athletes);
       });
@@ -29,13 +29,13 @@ module.exports = function (app) {
   });
 
   app.post("/athletes", function (req, res) {
-    var athlete = models.Athlete.build(req.body);
-    athlete.save(["name", "email"])
-      .complete(function (err, athlete) {
-        if (err) {
-          return res.send('400', 'Post syntax incorrect');
-        }
-        res.json(athlete);
+    var athlete = models.Athlete.create(req.body);
+    athlete
+      .error(function (err) {
+        return res.json(409, 'Conflict');
+      })
+      .success(function (athlete) {
+        res.json(201, athlete);
       });
   });
 
@@ -47,7 +47,7 @@ module.exports = function (app) {
         }
         athlete.destroy().complete(function (err) {
           if (err) {
-            return res.send(500, 'Internal Error');
+            return res.send(500, 'Internal Server Error');
           }
           res.json(athlete);
         });
