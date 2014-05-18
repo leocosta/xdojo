@@ -6,8 +6,6 @@ This is the repository for the XDojo website ([www.xdojo.com.br](http://www.xdoj
 [![Coverage Status](https://coveralls.io/repos/leocosta/xdojo/badge.png)](https://coveralls.io/r/leocosta/xdojo)
 [![Dependencies](https://gemnasium.com/leocosta/xdojo.png)](https://gemnasium.com/leocosta/xdojo)
 
-[![Codeship](https://www.codeship.io/projects/5399b800-b067-0131-a262-6660aa17add9/status)](https://www.codeship.io/projects/5399b800-b067-0131-a262-6660aa17add9/status)
-
 # Description
 
 Welcome to XDojo!
