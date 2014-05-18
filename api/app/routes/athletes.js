@@ -42,15 +42,17 @@ module.exports = function (app) {
   app.delete("/athletes/:id", function (req, res) {
     models.Athlete.find(req.params.id)
       .complete(function (err, athlete) {
-        if (err) {
-          return res.send(404, 'Not Found');
+        if (athlete === null) {
+          return res.json(404, 'Not Found');
         }
-        athlete.destroy().complete(function (err) {
-          if (err) {
-            return res.send(500, 'Internal Server Error');
-          }
-          res.json(athlete);
-        });
+        athlete
+          .destroy()
+          .complete(function (err) {
+            if (err) {
+              return res.json(500, 'Internal Server Error');
+            }
+            res.json(204, 'No Content');
+          });
       });
   });
 };

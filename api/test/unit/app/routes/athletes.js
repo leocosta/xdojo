@@ -112,4 +112,22 @@ describe('Athletes Routes', function () {
     });
   });
 
+  describe('DELETE /athletes/:id', function () {
+    describe('when deleting an existing athlete', function () {
+      it('should respond with 204', function (done) {
+        request(app)
+          .delete('/athletes/' + id)
+          .expect(204, done);
+      });
+    });
+
+    describe('when deleting a resource with an invalid request', function () {
+      it('should respond with 404', function (done) {
+        request(app)
+          .delete('/athletes/12345678')
+          .expect('Content-Type', /json/)
+          .expect(404, done);
+      });
+    });
+  });
 });
