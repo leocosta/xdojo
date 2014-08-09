@@ -31,12 +31,6 @@ body {
   border-top: 1px solid #e5e5e5;
 }
 
-/* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-}
 .container-narrow > hr {
   margin: 30px 0;
 }
@@ -58,6 +52,14 @@ body {
 .marketing p + h4 {
   margin-top: 28px;
 }
+
+/* Supporting margin top */
+.top5 { margin-top:5px; }
+.top7 { margin-top:7px; }
+.top10 { margin-top:10px; }
+.top15 { margin-top:15px; }
+.top17 { margin-top:17px; }
+.top30 { margin-top:30px; }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('xdojoClientApp')
+angular.module('xdojo')
   .controller('MainCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

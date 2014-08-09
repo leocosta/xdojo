@@ -1,9 +1,8 @@
 'use strict';
 
 angular
-  .module('xdojoClientApp', [
+  .module('xdojo', [
     'ngCookies',
-    'ngResource',
     'ngSanitize',
     'ngRoute'
   ])
@@ -12,6 +11,10 @@ angular
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
+      })
+      .when('/events', {
+        templateUrl: 'views/events.html',
+        controller: 'EventsCtrl'
       })
       .otherwise({
         redirectTo: '/'

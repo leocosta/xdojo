@@ -1,6 +1,6 @@
 {
-  "name": "xdojoclient",
-  "version": "0.0.0",
+  "name": "xdojo",
+  "version": "0.0.1",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
