@@ -5,7 +5,7 @@
  * @name xdojo.controller:EventsCtrl
  * @description
  * # EventsCtrl
- * Controller of the xdojo
+ * Controller of Events page
  */
 angular.module('xdojo')
   .controller('EventsCtrl', function ($scope) {
