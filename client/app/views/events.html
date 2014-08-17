@@ -9,16 +9,16 @@
 		</div>
 	</div>
 </div>
-<div class="panel panel-primary top10">
+<div class="panel panel-primary top10" ng-repeat="event in events">
 	<div class="panel-heading">
-		<h3 class="panel-title">Copa Hélio Grace 2014</h3>
+		<h3 class="panel-title">{{event.name}}</h3>
 	</div>
 	<div class="panel-body">
 		<div class="row">
 			<div class="col-md-6">
-				<div><strong>Local</strong>: Rio de Janeiro</div>
-				<div><strong>Início</strong>: 29/07/2014 às 9:00h</div>
-				<div><strong>Término</strong>: 29/07/2014 às 19:00h</div>
+				<div><strong>Local</strong>: {{event.place}}</div>
+				<div><strong>Início</strong>: {{event.starts | date:'dd/MM/yyyy HH:mm'}}</div>
+				<div><strong>Término</strong>: {{event.ends | date:'dd/MM/yyyy HH:mm'}}</div>
 			</div>
 			<div class="col-md-6">
 				<div class="row">
@@ -30,48 +30,7 @@
 					</div>
 					<div class="col-md-8">
 						<div class="btn-group pull-right">
-							<button type="button" class="btn btn-sm">Editar</button>
-							<button type="button" class="btn btn-sm dropdown-toggle"><span class="caret"></span></button>
-							<ul class="dropdown-menu">
-								<li><a href="#">Duplicar</a></li>
-								<li class="divider"></li>
-								<li><a href="#"><span class="text-danger">Remover</span></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="panel panel-primary top10">
-	<div class="panel-heading">
-		<h3 class="panel-title">Copa Hélio Grace 2014</h3>
-	</div>
-	<div class="panel-body">
-		<div class="row">
-			<div class="col-md-6">
-				<div><strong>Local</strong>: Rio de Janeiro</div>
-				<div><strong>Início</strong>: 29/07/2014 às 9:00h</div>
-				<div><strong>Término</strong>: 29/07/2014 às 19:00h</div>
-			</div>
-			<div class="col-md-6">
-				<div class="row">
-					<div class="col-md-2 text-center">
-						<h4>234 <br /><small>Inscritos</small></h4>
-					</div>
-					<div class="col-md-2 text-center">
-						<h4>200 <br /><small>Confirmados</small></h4>
-					</div>
-					<div class="col-md-8">
-						<div class="btn-group pull-right">
-							<button type="button" class="btn btn-sm" ng-click="launch()">Editar</button>
-							<button type="button" class="btn btn-sm dropdown-toggle"><span class="caret"></span></button>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Duplicar</a></li>
-								<li class="divider"></li>
-								<li><a href="#" ng-click="launch()"><span class="text-danger">Remover</span></a></li>
-							</ul>
+							<a href="#/event/{{event.id}}" class="btn btn-primary btn-sm">Editar</a>
 						</div>
 					</div>
 				</div>
