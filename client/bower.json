@@ -20,9 +20,10 @@
   ],
   "dependencies": {
     "angular-bootstrap": "~0.11.0",
-    "angular-cookies": "1.2.15",
-    "angular-route": "1.2.15",
-    "angular-sanitize": "1.2.15",
+    "angular-cookies": "~1.2.15",
+    "angular-route": "~1.2.15",
+    "angular-sanitize": "~1.2.15",
+    "angular-dialog-service": "~5.1.0",
     "bootstrap-css": "~3.2.0",
     "jquery": "~2.1.1"
   },

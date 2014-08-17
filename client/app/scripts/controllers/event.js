@@ -5,9 +5,9 @@
  * @name xdojoClientApp.controller:EventCtrl
  * @description
  * # EventCtrl
- * Controller of the xdojoClientApp
+ * Controller of the xdojo
  */
-angular.module('xdojoClientApp')
+angular.module('xdojo')
   .controller('EventCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

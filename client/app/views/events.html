@@ -31,7 +31,7 @@
 					<div class="col-md-8">
 						<div class="btn-group pull-right">
 							<button type="button" class="btn btn-sm">Editar</button>
-							<button type="button" class="btn btn-sm dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+							<button type="button" class="btn btn-sm dropdown-toggle"><span class="caret"></span></button>
 							<ul class="dropdown-menu">
 								<li><a href="#">Duplicar</a></li>
 								<li class="divider"></li>
@@ -65,12 +65,12 @@
 					</div>
 					<div class="col-md-8">
 						<div class="btn-group pull-right">
-							<button type="button" class="btn btn-sm">Editar</button>
-							<button type="button" class="btn btn-sm dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-							<ul class="dropdown-menu">
+							<button type="button" class="btn btn-sm" ng-click="launch()">Editar</button>
+							<button type="button" class="btn btn-sm dropdown-toggle"><span class="caret"></span></button>
+							<ul class="dropdown-menu" role="menu">
 								<li><a href="#">Duplicar</a></li>
 								<li class="divider"></li>
-								<li><a href="#"><span class="text-danger">Remover</span></a></li>
+								<li><a href="#" ng-click="launch()"><span class="text-danger">Remover</span></a></li>
 							</ul>
 						</div>
 					</div>
