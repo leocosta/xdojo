@@ -14,17 +14,17 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/events/new', {
+        templateUrl: 'views/events/new.html',
+        controller: 'EventsNewCtrl'
+      })
       .when('/events', {
-        templateUrl: 'views/events.html',
-        controller: 'EventsCtrl'
+        templateUrl: 'views/events/list.html',
+        controller: 'EventsListCtrl'
       })
-      .when('/event', {
-        templateUrl: 'views/event.html',
-        controller: 'EventCtrl'
-      })
-      .when('/event/:id', {
-        templateUrl: 'views/event.html',
-        controller: 'EventCtrl'
+      .when('/events/:id', {
+        templateUrl: 'views/events/index.html',
+        controller: 'EventsIndexCtrl'
       })
       .otherwise({
         redirectTo: '/'
@@ -54,4 +54,10 @@ angular
     });
 
     $translateProvider.preferredLanguage('pt-BR');
-  }]);
+  }])
+  .config(function(datepickerPopupConfig) {
+    datepickerPopupConfig.datepickerPopup = "dd-MM-yyyy";
+    datepickerPopupConfig.autoclose = true;
+    datepickerPopupConfig.todayHighlight = true;
+    console.log(datepickerPopupConfig)
+  });

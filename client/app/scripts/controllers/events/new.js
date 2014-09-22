@@ -2,13 +2,15 @@
 
 /**
  * @ngdoc function
- * @name xdojoClientApp.controller:EventCtrl
+ * @name xdojo.controller:EventsNewCtrl
  * @description
- * # EventCtrl
+ * # EventsNewCtrl
  * Controller of the xdojo
  */
 angular.module('xdojo')
-  .controller('EventCtrl', function ($scope) {
+  .controller('EventsNewCtrl', function ($scope) {
+    $scope.starts = new Date();
+    $scope.ends = new Date();
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

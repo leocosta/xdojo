@@ -8,7 +8,7 @@
  * Controller of Events page
  */
 angular.module('xdojo')
-  .controller('EventsCtrl', function ($scope, dialogs){
+  .controller('EventsListCtrl', function ($scope, dialogs){
     $scope.events = [
       {id: 1, name: 'III Copa Cara de Leão 2015', starts: '2015-08-01T09:00:00', ends: '2015-08-01T19:00:00', place: 'Vilar dos Teles - Colégio Fluminense'},
       {id: 2, name: 'Copa Hélio Grace', starts: '2015-10-01T09:00:00', ends: '2015-10-02T19:00:00', place: 'Ilha do Governador - Iate Clube Jd. Guanabara'},

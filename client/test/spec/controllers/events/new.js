@@ -1,17 +1,17 @@
 'use strict';
 
-describe('Controller: EventsCtrl', function () {
+describe('Controller: EventsNewCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('xdojo'));
+  beforeEach(module('xdojoClientApp'));
 
-  var EventsCtrl,
+  var EventsNewCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    EventsCtrl = $controller('EventsCtrl', {
+    EventsNewCtrl = $controller('EventsNewCtrl', {
       $scope: scope
     });
   }));
