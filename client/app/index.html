@@ -13,13 +13,13 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/angular-dialog-service/dialogs.min.css" />
-    <link rel="stylesheet" href="bower_components/bootstrap-css/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/metisMenu/dist/metisMenu.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
-    <link rel="stylesheet" href="bower_components/bootstrap-css/css/bootstrap.css">
-    <link rel="stylesheet" href="bower_components/bootstrap-css/css/bootstrap-theme.css"></script>
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/plugins/datepicker/datepicker.css">
     <!-- endbuild -->
   </head>
   <body ng-app="xdojo">
@@ -27,10 +27,13 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="container">
-      <div class="header" ng-include="'views/_header.html'"></div>
-      <div ng-view></div>
-      <div class="footer" ng-include="'views/_footer.html'"></div>
+    <div id="wrapper">
+      <nav ng-include="'views/_navbar.html'" class="navbar-default navbar-static-side" role="navigation"></nav>
+      <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div ng-include="'views/_header.html'"></div>
+        <div ng-view></div>
+        <div ng-include="'views/_footer.html'" class="footer"></div>
+      </div>
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -61,15 +64,19 @@
     <script src="bower_components/angular-translate/angular-translate.js"></script>
     <script src="bower_components/angular-dialog-service/dialogs.min.js"></script>
     <script src="bower_components/angular-dialog-service/dialogs-default-translations.min.js"></script>
-    <script src="bower_components/bootstrap-css/js/bootstrap.min.js"></script>
+    <script src="bower_components/gritter/js/jquery.gritter.min.js"></script>
+    <script src="bower_components/metisMenu/dist/metisMenu.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/controllers/events.js"></script>
-    <script src="scripts/controllers/event.js"></script>
+    <script src="scripts/controllers/events/new.js"></script>
+    <script src="scripts/controllers/events/list.js"></script>
+    <script src="scripts/controllers/events/index.js"></script>
+    <script src="scripts/directives/metismenu.js"></script>
+    <script src="scripts/directives/collapsiblebox.js"></script>
     <!-- endbuild -->
 </body>
 </html>
