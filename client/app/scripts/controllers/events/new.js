@@ -11,9 +11,16 @@ angular.module('xdojo')
   .controller('EventsNewCtrl', function ($scope) {
     $scope.starts = new Date();
     $scope.ends = new Date();
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $scope.calendars = {
+        starts: false,
+        ends: false
+    };
+
+    $scope.toggleCalendar = function($event, calendar) {
+        $event.preventDefault();
+        $event.stopPropagation();
+
+        $scope.calendars[calendar] = !$scope.calendars[calendar];
+    };
+    
   });

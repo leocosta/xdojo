@@ -55,9 +55,8 @@ angular
 
     $translateProvider.preferredLanguage('pt-BR');
   }])
-  .config(function(datepickerPopupConfig) {
-    datepickerPopupConfig.datepickerPopup = "dd-MM-yyyy";
-    datepickerPopupConfig.autoclose = true;
-    datepickerPopupConfig.todayHighlight = true;
-    console.log(datepickerPopupConfig)
+  .config(function(datepickerConfig) {
+    datepickerConfig.datepickerPopup = 'dd/MM/yyyy';
+    datepickerConfig.autoclose = true;
+    datepickerConfig.todayHighlight = true;
   });

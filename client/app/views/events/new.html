@@ -38,13 +38,13 @@
                               <div class="col-md-6">
                                 <label class="control-label">Início</label>
                                 <div class="input-group date">
-                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" ng-model="starts" datepicker-popup="dd-MMMM-yyyy">
+                                    <span class="input-group-addon"><i class="fa fa-calendar" ng-click="toggleCalendar($event, 'starts')"></i></span><input type="text" class="form-control" ng-model="starts" datepicker-popup="dd/MM/yyyy" is-open="calendars.starts" ng-required="true">
                                 </div>
                               </div>
                               <div class="col-md-6">
                                 <label class="control-label">Término</label>
                                 <div class="input-group date">
-                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" ng-model="ends" datepicker-popup="dd-MMMM-yyyy">
+                                    <span class="input-group-addon"><i class="fa fa-calendar" ng-click="toggleCalendar($event, 'ends')"></i></span><input type="text" class="form-control" ng-model="ends" datepicker-popup="dd/MM/yyyy" is-open="calendars.ends" ng-required="true">
                                 </div>
                               </div>
                             </div>
