@@ -7,6 +7,7 @@
 
 var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
+var WeightDivision = require('../api/weightDivision/weightDivision.model');
 
 Thing.find({}).remove(function() {
   Thing.create({
@@ -46,4 +47,40 @@ User.find({}).remove(function() {
       console.log('finished populating users');
     }
   );
+});
+
+WeightDivision.find({}).remove(function() {
+  WeightDivision.create({
+    name : 'Rooster',
+    resourceKey: 'rooster'
+  }, {
+    name : 'Light Feather',
+    resourceKey: 'lightFeather'
+  }, {
+    name : 'Feather',
+    resourceKey: 'feather'
+  }, {
+    name : 'Light',
+    resourceKey: 'light'
+  }, {
+    name : 'Middle',
+    resourceKey: 'middle'
+  }, {
+    name : 'Medium Heavy',
+    resourceKey: 'mediumHeavy'
+  }, {
+    name : 'Heavy',
+    resourceKey: 'heavy'
+  }, {
+    name : 'Super Heavy',
+    resourceKey: 'superHeavy'
+  }, {
+    name : 'Ultra Heavy',
+    resourceKey: 'ultraHeavy'
+  }, {
+    name : 'Open Class',
+    resourceKey: 'openClass'
+  }, function() {
+    console.log('finished populating weight divisions');
+  });
 });

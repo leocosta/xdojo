@@ -9,12 +9,48 @@ function Authed() {
   var agent = request.agent(app);
   var token;
 
+  var guest = {
+    name: 'Guest',
+    email: 'guest@guest.com',
+    password: 'password',
+    role: 'guest'
+  };
+
+  var user = {
+    name: 'User',
+    email: 'user@user.com',
+    password: 'password',
+    role: 'user'
+  };
+
   var admin = {
     name: 'Admin',
     email: 'admin@admin.com',
     password: 'password',
     role: 'admin'
-  };
+  };  
+
+  function createGuest(done) {
+    User.remove(function() {
+      var user = new User(guest);
+
+      user.save(function(err) {
+        if (err) return done(err);
+        done();
+      });
+    });
+  }
+
+  function createUser(done) {
+    User.remove(function() {
+      var user = new User(guest);
+
+      user.save(function(err) {
+        if (err) return done(err);
+        done();
+      });
+    });
+  }
 
   function createAdmin(done) {
     User.remove(function() {
@@ -42,9 +78,18 @@ function Authed() {
   }
 
   return {
-    authorize: function() {
+    authorize: function(options) {
+      options = options || {};
+      
       before(function(done) {
-        createAdmin(done);
+        var methods = {
+          guest: createGuest,
+          user: createUser,
+          admin: createAdmin
+        };
+
+        var method = methods[options.role || 'admin'];
+        method(done);
       });
       before(function(done) {
         getToken().then(function() {
