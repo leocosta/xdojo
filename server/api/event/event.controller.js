@@ -3,6 +3,15 @@
 var _ = require('lodash');
 var Event = require('./event.model');
 
+var validationError = function(res, err) {
+  return res.json(422, err);
+};
+
+
+var handleError = function(res, err) {
+  return res.send(500, err);
+}
+
 // Get list of events
 exports.index = function(req, res) {
   Event.find(function (err, events) {
@@ -26,9 +35,8 @@ exports.show = function(req, res) {
 exports.create = function(req, res) {
     var newEvent = req.body;
     newEvent.creator = req.user;
-
     Event.create(newEvent, function(err, event) {
-      if(err) { return handleError(res, err); }
+      if(err) { return validationError(res, err); }
       return res.json(201, event);
     });
 };
@@ -58,7 +66,3 @@ exports.destroy = function(req, res) {
     });
   });
 };
-
-function handleError(res, err) {
-  return res.send(500, err);
-}
