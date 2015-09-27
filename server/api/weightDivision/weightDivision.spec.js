@@ -45,7 +45,7 @@ describe('API: /api/weightDivisions', function() {
       });
   });
 
-  it('POST: should respond with a updated weight division', function(done) {
+  it('PUT: should respond with a updated weight division', function(done) {
     
     WeightDivision.create(newWeightDivision, function(err, weightDivision) {
       if (err) return done(err);
