@@ -4,10 +4,12 @@ angular.module('xdojoApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
+  'ngLodash',
+  'ngMap',
   'ui.router',
   'ui.bootstrap',
-  //'ui.bootstrap.datetimepicker',
-  'toaster'
+  'toaster',
+  'angularMoment'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
