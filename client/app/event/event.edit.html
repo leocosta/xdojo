@@ -6,21 +6,48 @@
       <h1>New Event</h1>
     </div>
     <div class="col-sm-12">
-      <form class="form" name="form" ng-submit="save()" novalidate>
+      <form  class="form-horizontal" name="form" ng-submit="save()" novalidate>
         <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted, 'has-error': form.name.$invalid && submitted }">
-          <label>Name</label>
-          <input type="text" name="name" class="form-control" ng-model="event.name" required/>
-          <p class="help-block" ng-show="form.name.$error.required && submitted">
-            A name is required
-          </p>
-          <p class="help-block">{{ errors.other }}</p>
+          <label class="col-sm-2 control-label">Name</label>
+          <div class="col-sm-10">
+            <input type="text" name="name" class="form-control input-sm" ng-model="event.name" required/>
+            <p class="help-block" ng-show="form.name.$error.required && submitted">
+              A name is required
+            </p>
+          </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-success': form.startsAt.$valid && form.endsAt.$valid && submitted, 'has-error': (form.startsAt.$invalid || form.endsAt.$invalid) && submitted }">
+          <label class="col-sm-2 control-label">From</label>
+          <div class="col-sm-4">
+            <p class="input-group">
+              <input name="startsAt" type="text" class="form-control input-sm" datepicker-popup="dd/MM/yyyy"  ng-model="event.startsAt" is-open="startsAtOpened" max-date="event.endsAt" ng-required="true" close-text="Close" />
+              <span class="input-group-addon" ng-click="startsAtOpened = true"><i class="glyphicon glyphicon-calendar"></i></span>
+            </p>
+            <p class="help-block" ng-show="form.startsAt.$error.required && submitted" >
+              Date start is required
+            </p>
+          </div>
+          <label class="col-sm-2 control-label">To</label>
+          <div class="col-sm-4">
+            <p class="input-group">
+              <input name="endsAt" type="text" class="form-control input-sm" datepicker-popup="dd/MM/yyyy"  ng-model="event.endsAt" is-open="endsAtOpened" min-date="event.startsAt" ng-required="true" close-text="Close" />
+              <span class="input-group-addon" ng-click="endsAtOpened = true"><i class="glyphicon glyphicon-calendar"></i></span>
+            </p>
+            <p class="help-block" ng-show="form.endsAt.$error.required && submitted" >
+              Date ends is required
+            </p>
+          </div>
         </div>
         <div class="form-group" ng-class="{ 'has-success': form.email.$valid && submitted, 'has-error': form.email.$invalid && submitted }">
-          <label>Info</label>
-          <textarea name="info", rows="3" class="form-control" ng-model="event.info"></textarea>
+          <label class="col-sm-2 control-label">Info</label>
+          <div class="col-sm-10">
+            <textarea name="info", rows="3" class="form-control input-sm" ng-model="event.info"></textarea>
+          </div>
         </div>
-        <div>
-          <button class="btn btn-inverse btn-lg btn-login" type="submit">Save</button>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button class="btn btn-inverse btn-lg btn-login" type="submit">Save</button>
+          </div>
         </div>
       </form>
     </div>

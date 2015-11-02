@@ -4,7 +4,9 @@ var _ = require('lodash');
 var Event = require('./event.model');
 
 var validationError = function(res, err) {
-  return res.json(422, err);
+  return res.json(422, {
+    message: err.message
+  });
 };
 
 
@@ -37,9 +39,6 @@ exports.create = function(req, res) {
     newEvent.creator = req.user;
     Event.create(newEvent, function(err, event) {
       if(err) {
-        console.log(err);
-        //debugger;
-
         return validationError(res, err);
       }
       return res.json(201, event);

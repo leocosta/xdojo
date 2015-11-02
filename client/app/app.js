@@ -5,7 +5,9 @@ angular.module('xdojoApp', [
   'ngResource',
   'ngSanitize',
   'ui.router',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  //'ui.bootstrap.datetimepicker',
+  'toaster'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
@@ -40,7 +42,9 @@ angular.module('xdojoApp', [
       }
     };
   })
-
+  .config(function(){
+    //moment.locale('pt-br');
+  })
   .run(function ($rootScope, $location, Auth) {
     // Redirect to login if route requires auth and you're not logged in
     $rootScope.$on('$stateChangeStart', function (event, next) {

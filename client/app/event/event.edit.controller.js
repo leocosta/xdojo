@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('xdojoApp')
-  .controller('EventEditCtrl', function ($scope, $state, Event) {
+  .controller('EventEditCtrl', function ($scope, $state, toaster, Event) {
     $scope.event = {};
     $scope.errors = {};
 
@@ -17,14 +17,14 @@ angular.module('xdojoApp')
           endsAt: $scope.event.endsAt
         },
         function() {
-          // Logged in, redirect to home
           $state.go('events');
         },
         function(err) {
-          $scope.errors.other = err.message;
+          toaster.pop('error', null, err.data.message);
         });
       }
     };
 
     $scope.save = save;
+    window.$scope = $scope;
   });
