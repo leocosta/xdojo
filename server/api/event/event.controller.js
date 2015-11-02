@@ -36,7 +36,12 @@ exports.create = function(req, res) {
     var newEvent = req.body;
     newEvent.creator = req.user;
     Event.create(newEvent, function(err, event) {
-      if(err) { return validationError(res, err); }
+      if(err) {
+        console.log(err);
+        //debugger;
+
+        return validationError(res, err);
+      }
       return res.json(201, event);
     });
 };

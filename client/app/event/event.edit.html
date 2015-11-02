@@ -1,0 +1,29 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>New Event</h1>
+    </div>
+    <div class="col-sm-12">
+      <form class="form" name="form" ng-submit="save()" novalidate>
+        <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted, 'has-error': form.name.$invalid && submitted }">
+          <label>Name</label>
+          <input type="text" name="name" class="form-control" ng-model="event.name" required/>
+          <p class="help-block" ng-show="form.name.$error.required && submitted">
+            A name is required
+          </p>
+          <p class="help-block">{{ errors.other }}</p>
+        </div>
+        <div class="form-group" ng-class="{ 'has-success': form.email.$valid && submitted, 'has-error': form.email.$invalid && submitted }">
+          <label>Info</label>
+          <textarea name="info", rows="3" class="form-control" ng-model="event.info"></textarea>
+        </div>
+        <div>
+          <button class="btn btn-inverse btn-lg btn-login" type="submit">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <hr>
+</div>

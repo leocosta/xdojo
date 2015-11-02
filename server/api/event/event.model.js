@@ -7,12 +7,12 @@ var EventSchema = new Schema({
   name: { type: String, required: true },
   info: String,
   creator: { type : Schema.ObjectId, ref: 'User' },
-  location: String,
+  location: Schema.Types.Mixed,
   startsAt: Date,
   endsAt: Date,
   subscribers: [{ type : Schema.ObjectId, ref: 'User' }],
   status: {type: String, enum: ['Created', 'Opened', 'CheckingReleased', 'BracketReleased', 'Finished'], default: 'Created' },
-  created: { type: Date, default: Date.now }
+  createdAt: { type: Date, default: Date.now }
 });
 
 EventSchema.pre('save', function(next) {
@@ -21,7 +21,7 @@ EventSchema.pre('save', function(next) {
     if(err) throw err;
     if(event) {
       if(self.id !== event.id){
-        var err = new Error('You cannot create a new event');
+        next(new Error('You cannot create a new event'));
       }
     }
     next(err);
